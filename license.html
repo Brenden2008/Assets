@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html style="background-color: turquoise;">
+<head style="background-color: turquoise;">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>License Generator</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+</head>
+<body style="background-color: turquoise;">
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Drivers license
+      </h1>
+      <ul class="subtitle">
+        <li>Name: <span id="username">{username}</span></li>
+        <li>License type: <span id="lt">{license_type}</span></li>
+        <li>Location ID: <span id="loc_id">{loc_id}</span></li>
+      </ul>
+      <img id="picture">
+      <p>
+       Valid in all Department of Licensing cooperating cities.
+      </p>
+    </div>
+  </section>
+  <script>
+  	const urlParams = new URLSearchParams(window.location.search);
+		const username = urlParams.get('username');
+    const lt = urlParams.get('lt');
+    const loc_id = urlParams.get('loc_id');
+    
+    document.getElementById("username").interHTML = username;
+    document.getElementById("lt").interHTML = lt;
+    document.getElementById("loc_id").interHTML = loc_id;
+    
+    document.getElementById("picture").src = "https://minotar.net/body/" + username + "/100.png";
+  </script>
+</body>
+</html>
